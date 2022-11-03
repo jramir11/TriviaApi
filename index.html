@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trivia.css">
+    <title>Trivia de una API</title>
+</head>
+<body>
+    <section class="horiz1">
+        <h5 class="horiz1-txt" id="horiz1-h5" onclick="nuevasPreguntas()"><a href="#">continue with new questions</a></h5>
+        <h2 class="horiz1-txt" id="horiz1-trivia">Trivia Night</h2>
+        <h3 class="horiz1-txt" id="horiz1-points">0</h3>Points<br><br>
+    </section>
+
+    <section class="horizont2">
+            <label class="horizont2-p">Movie</label>
+            <label class="horizont2-p">Music</label>
+            <label class="horizont2-p">Geography</label>
+    </section>
+
+    <section class="vertical">
+        <div class="vertical1">  <!-- VERTICAL1-->
+            <article class="vertical1-borde">
+                <p class= "vertical1_click" onclick="vertical1_click()">100</p>
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical1-preg">pregunta</p>
+                True: <input type="radio" name="vertical1-radio" id="vertical1-radio" onclick="vertical1_radio_true()">
+                False: <input type="radio" name="vertical1-radio" id="vertical1-radio" onclick="vertical1_radio_false()">
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical1-puntaje">0</p>
+            </article>
+        </div>
+        <div class="vertical1">   <!-- VERTICAL2-->
+            <article class="vertical1-borde">
+                <p class= "vertical2_click" onclick="vertical2_click()">50</p>
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical2-preg">pregunta</p>
+                <input type="radio" name="vertical2-radio" id="vertical2-radio" onclick="vertical2_radio_opc1()"><label for="vertical2-radio-opc1" id="vertical2-radio-opc1">Opcion1</label>
+                <input type="radio" name="vertical2-radio" id="vertical2-radio" onclick="vertical2_radio_opc2()"><label for="vertical2-radio-opc2" id="vertical2-radio-opc2">Opcion2</label>
+                <input type="radio" name="vertical2-radio" id="vertical2-radio" onclick="vertical2_radio_opc3()"><label for="vertical2-radio-opc3" id="vertical2-radio-opc3">Opcion3</label>
+                <input type="radio" name="vertical2-radio" id="vertical2-radio" onclick="vertical2_radio_opc4()"><label for="vertical2-radio-opc4" id="vertical2-radio-opc4">Opcion4</label>
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical2-puntaje">0</p>
+            </article>
+        </div>
+        <div class="vertical1">  <!-- VERTICAL3-->
+            <article class="vertical1-borde">
+                <p class= "vertical3_click" onclick="vertical3_click()">100</p>
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical3-preg">pregunta</p>
+                True: <input type="radio" name="vertical3-radio" id="vertical3-radio" onclick="vertical3_radio_true()">
+                False: <input type="radio" name="vertical3-radio" id="vertical3-radio" onclick="vertical3_radio_false()">
+            </article>
+            <article class="vertical1-borde">
+                <p id="vertical3-puntaje">0</p>
+            </article>
+        </div>
+
+    </section>
+
+
+    <script src="trivia.js"></script>
+</body>
+</html>

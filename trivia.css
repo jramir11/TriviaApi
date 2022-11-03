@@ -1,0 +1,65 @@
+* {
+    /*border: 1px solid red;*/
+    padding: 0px;
+    margin: 0px;
+}
+
+.horiz1 {
+    display: flex;
+    /*justify-content: space-around;*/
+    height: 50px;
+    margin-left: 21%;
+}
+.horiz1-txt {
+    padding: 0px 50px 0px 10px;
+    margin-right: 30px;
+}
+#horiz1-trivia {
+    width: 150px;
+}
+#horiz1-points {
+    width: 0px;
+    margin-right: -10px;
+}
+
+.horizont2 {
+    display: flex;
+    /*justify-content: space-evenly;*/
+    height: 70px;
+    width: 500px;
+    margin-left: 21%;
+    /*padding: 0px 20px 0px 0px;*/
+}
+.horizont2-p {
+    background-color:wheat;
+    width: 50px;
+    padding: 20px 90px 0px 60px;
+    margin-right: 20px;
+    
+}
+
+.vertical {
+    /*border: 1px solid red;*/
+    display: flex;
+    height: 400px;
+    width: 653px;
+    margin-left: 20%;
+    margin-top: 10px;
+}
+.vertical1 {
+    width: 100px;
+    padding: 20px 35px 0px 50px;
+    margin-right: 20px;
+    
+}
+
+.vertical1-borde {
+    border: 1px solid red;
+    background-color:cornflowerblue;
+    border-radius: 10px;
+    height: 110px;
+    width: 120px;
+    margin-bottom: 10px;
+    padding: 10px 10px 0px 10px;
+    font-size: 11px;
+}
