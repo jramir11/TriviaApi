@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="trivia.css">
     <title>Trivia de una API</title>
 </head>
-<body>
+<body onload="nuevasPreguntas();">
     <section class="horiz1">
         <h5 class="horiz1-txt" id="horiz1-h5" onclick="nuevasPreguntas()"><a href="#">continue with new questions</a></h5>
         <h2 class="horiz1-txt" id="horiz1-trivia">Trivia Night</h2>
@@ -22,8 +22,8 @@
 
     <section class="vertical">
         <div class="vertical1">  <!-- VERTICAL1-->
-            <article class="vertical1-borde">
-                <p class= "vertical1_click" onclick="vertical1_click()">100</p>
+            <article class="vertical1-borde" onclick="vertical1_click()">
+                <p class= "vertical1_p">100</p>
             </article>
             <article class="vertical1-borde">
                 <p id="vertical1-preg">pregunta</p>
@@ -35,8 +35,8 @@
             </article>
         </div>
         <div class="vertical1">   <!-- VERTICAL2-->
-            <article class="vertical1-borde">
-                <p class= "vertical2_click" onclick="vertical2_click()">50</p>
+            <article class="vertical1-borde" onclick="vertical2_click()">
+                <p class= "vertical2_p">50</p>
             </article>
             <article class="vertical1-borde">
                 <p id="vertical2-preg">pregunta</p>
@@ -50,8 +50,8 @@
             </article>
         </div>
         <div class="vertical1">  <!-- VERTICAL3-->
-            <article class="vertical1-borde">
-                <p class= "vertical3_click" onclick="vertical3_click()">100</p>
+            <article class="vertical1-borde" onclick="vertical3_click()">
+                <p class= "vertical3_p">100</p>
             </article>
             <article class="vertical1-borde">
                 <p id="vertical3-preg">pregunta</p>

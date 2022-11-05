@@ -1,4 +1,6 @@
 //Nuevas Preguntas
+//nuevasPreguntas();
+
 let idx_film=0;
 let idx_musi=0;
 let idx_geog=0;
@@ -13,12 +15,13 @@ let array_musica_a = [];
 let array_musica_opc1=[];
 let array_musica_opc2=[];
 let array_musica_opc3=[];
+let array_musica_opc4=[];
 let array_geografia_q=[];
 let array_geografia_a=[];
-
+let azar;
 
 function nuevasPreguntas() {
-    llenar_array();
+        llenar_array();
  }
 
 async function llenar_array() {
@@ -37,26 +40,45 @@ async function llenar_array() {
     //llenando con Musica (varios elementos)
     response = await fetch("https://opentdb.com/api.php?amount=10&category=12&difficulty=easy&type=multiple");
     dataApi = await response.json();
-    
+
     for (i = 0; i < dataApi.results.length; i++) {
         array_musica_q.push(dataApi.results[i].question);
         array_musica_a.push(dataApi.results[i].correct_answer);
 
-        array_musica_opc1.push(dataApi.results[i].incorrect_answers[0]);
-        array_musica_opc2.push(dataApi.results[i].incorrect_answers[1]);
-        array_musica_opc3.push(dataApi.results[i].incorrect_answers[2]);
+        azar = Math.floor(Math.random() * 4); //azar de resp correcta
+        if (azar==0) {
+            array_musica_opc1.push(dataApi.results[i].correct_answer);
+        } else {
+            array_musica_opc1.push(dataApi.results[i].incorrect_answers[0]);
+        }
+        if (azar==1) {
+            array_musica_opc2.push(dataApi.results[i].correct_answer);
+        } else {
+            array_musica_opc2.push(dataApi.results[i].incorrect_answers[1]);
+        }
+        if (azar==2) {
+            array_musica_opc3.push(dataApi.results[i].correct_answer);
+        } else {
+            array_musica_opc3.push(dataApi.results[i].incorrect_answers[2]);
+        }
+        if (azar==3) {
+            array_musica_opc4.push(dataApi.results[i].correct_answer);
+        } else {
+            array_musica_opc4.push(dataApi.results[i].incorrect_answers[3]);
+        }
+        
     }
     musi.innerHTML=array_musica_q[0];
     idx_musi=0;
+
     musi_opc = document.querySelector("#vertical2-radio-opc1");
     musi_opc.innerText=array_musica_opc1[0];
     musi_opc = document.querySelector("#vertical2-radio-opc2");
     musi_opc.innerText=array_musica_opc2[0];
     musi_opc = document.querySelector("#vertical2-radio-opc3");
-    musi_opc.innerText=array_musica_a[0];
-    musi_opc = document.querySelector("#vertical2-radio-opc4");
     musi_opc.innerText=array_musica_opc3[0];
-
+    musi_opc = document.querySelector("#vertical2-radio-opc4");
+    musi_opc.innerText=array_musica_opc4[0];
     
 
     //llenando con geografia (T o F)
@@ -97,9 +119,9 @@ function vertical2_click() {   //musica
     musi_opc = document.querySelector("#vertical2-radio-opc2");
     musi_opc.innerText=array_musica_opc2[idx_musi];
     musi_opc = document.querySelector("#vertical2-radio-opc3");
-    musi_opc.innerText=array_musica_a[idx_musi];
-    musi_opc = document.querySelector("#vertical2-radio-opc4");
     musi_opc.innerText=array_musica_opc3[idx_musi];
+    musi_opc = document.querySelector("#vertical2-radio-opc4");
+    musi_opc.innerText=array_musica_opc4[idx_musi];
 
     //limpia los radio button
     musi_opc = document.querySelectorAll("#vertical2-radio");
@@ -107,6 +129,7 @@ function vertical2_click() {   //musica
         musi_opc[i].checked = false;
     }
 }
+
 function vertical3_click() {   //geog
     idx_geog=idx_geog + 1;
     if (idx_geog > 9){
@@ -172,10 +195,10 @@ function vertical2_radio_opc2() {
     vertical2_radio_opcion(array_musica_opc2[idx_musi]);
 }
 function vertical2_radio_opc3() {
-    vertical2_radio_opcion(array_musica_a[idx_musi]);
+    vertical2_radio_opcion(array_musica_opc3[idx_musi]);
 }
 function vertical2_radio_opc4() {
-    vertical2_radio_opcion(array_musica_opc3[idx_musi]);
+    vertical2_radio_opcion(array_musica_opc4[idx_musi]);
 }
 function vertical2_radio_opcion(eleccion) {
     puntaje=document.querySelector("#vertical2-puntaje")
